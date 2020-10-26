@@ -1,0 +1,11 @@
+state: enabled
+email: info@lukasengelhardt.net
+fullname: 'Lukas Engelhardt'
+title: admin
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$pP2OmlXvSv.lDQwk3Ky9Gurkby.BLsMxnKdt1OXa1UESP20X3c9wa

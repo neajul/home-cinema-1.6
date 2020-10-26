@@ -1,0 +1,8 @@
+<ul>
+  {% for p in pages.children.visible if p.template == "day" %}
+    <li>
+      {{ p.menu }}
+    </li>
+    {{dump(p)}}
+  {% endfor %}
+</ul>
