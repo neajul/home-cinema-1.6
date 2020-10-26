@@ -1,9 +1,61 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
+{# first, about part #}
 
-  {% for child in page.children %}
-  what up
+{# then, program part #}
+  {# loop through days #}
+  {% for p in pages.children.visible if p.template == "day" %}
+    <div class="day-container">
+      {# loop through program items #}
+      {% for pitem in p.header.programitems %}
+        <div class="program-item">
+        {# start time #}
+          <span class="starting-time">{{pitem.start}}</span>
+        {# duration #}
+          <span class="duration">{{pitem.duration}} min</span>
+        {# main image #}
+          {% for image, notimportant in pitem.mainimage %}
+            <img class="main-img" src="{{image}}" alt="">
+          {% endfor %}
+        {# content #}
+          {# multiple movies #}
+          {% if pitem.movies|length > 1 %}
+            <ul class="content-list">
+              <li><h1>{{pitem.title}}</h1></li>
+              {% for movie in pitem.movies %}
+                <li>
+                  <span>{{movie.title}}</span>
+                  <span>{{movie.author}}</span>
+                  <span>{{movie.length}} min</span>
+                </li>
+              {% endfor %}
+              <li>{{pitem.desription|markdown}}</li>
+              <li>{{pitem.credits|markdown}}</li>
+            </ul>
+            <ul class="department-list">
+            {% for movie in pitem.movies %}
+              <li>
+                <span>{{movie.department}}</span>
+              </li>
+            {% endfor %}
+            </ul>
+        {# just one movie #}
+          {% else %}
+            <ul class="content-list">
+              <li><h1>{{pitem.movies|first.title}}</h1></li>
+              <li><span>{{pitem.movies|first.author}}</span></li>
+            </ul>
+            <ul class="department-list">
+              <li>
+                <span>{{pitem.movies|first.department}}</span>
+              </li>
+            </ul>
+          {% endif %}
+        </div>
 
+        {{dump(pitem)}}
+      {% endfor %}
+    </div>
   {% endfor %}
 {% endblock %}

@@ -41,17 +41,13 @@ class __TwigTemplate_e68745712c2e15aed2617c4aba747f870059d286eb249bd340cd90dc097
                 echo $this->getAttribute($context["p"], "menu", []);
                 echo "
     </li>
-    ";
-                // line 6
-                echo $this->env->getExtension('Grav\Common\Twig\TwigExtension')->dump($this->env, $context, $context["p"]);
-                echo "
   ";
             }
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['p'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 8
+        // line 7
         echo "</ul>
 ";
     }
@@ -68,7 +64,7 @@ class __TwigTemplate_e68745712c2e15aed2617c4aba747f870059d286eb249bd340cd90dc097
 
     public function getDebugInfo()
     {
-        return array (  55 => 8,  46 => 6,  41 => 4,  38 => 3,  33 => 2,  30 => 1,);
+        return array (  51 => 7,  41 => 4,  38 => 3,  33 => 2,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -86,7 +82,6 @@ class __TwigTemplate_e68745712c2e15aed2617c4aba747f870059d286eb249bd340cd90dc097
     <li>
       {{ p.menu }}
     </li>
-    {{dump(p)}}
   {% endfor %}
 </ul>
 ", "partials/navigation.html.twig", "/Users/lukasengelhardt/Dropbox/Current Work/Sandberg/yr 1/08 home cinema/1 code/home-cinema-1.6/user/themes/cinema-theme/templates/partials/navigation.html.twig");
