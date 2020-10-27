@@ -165,22 +165,30 @@ class __TwigTemplate_9de1010f2d790d8318db6231ea774d674d03bfa4fa56e4b0976dd16d3e1
                         // line 47
                         echo $this->getAttribute(twig_first($this->env, $this->getAttribute($context["pitem"], "movies", [])), "author", []);
                         echo "</span></li>
+              <li>";
+                        // line 48
+                        echo $this->env->getExtension('Grav\Common\Twig\TwigExtension')->markdownFunction($context, $this->getAttribute($context["pitem"], "desription", []));
+                        echo "</li>
+              <li>";
+                        // line 49
+                        echo $this->env->getExtension('Grav\Common\Twig\TwigExtension')->markdownFunction($context, $this->getAttribute($context["pitem"], "credits", []));
+                        echo "</li>
             </ul>
             <ul class=\"department-list\">
               <li>
                 <span>";
-                        // line 51
+                        // line 53
                         echo $this->getAttribute(twig_first($this->env, $this->getAttribute($context["pitem"], "movies", [])), "department", []);
                         echo "</span>
               </li>
             </ul>
           ";
                     }
-                    // line 55
+                    // line 57
                     echo "        </div>
 
         ";
-                    // line 57
+                    // line 59
                     echo $this->env->getExtension('Grav\Common\Twig\TwigExtension')->dump($this->env, $context, $context["pitem"]);
                     echo "
       ";
@@ -188,7 +196,7 @@ class __TwigTemplate_9de1010f2d790d8318db6231ea774d674d03bfa4fa56e4b0976dd16d3e1
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pitem'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 59
+                // line 61
                 echo "    </div>
   ";
             }
@@ -210,7 +218,7 @@ class __TwigTemplate_9de1010f2d790d8318db6231ea774d674d03bfa4fa56e4b0976dd16d3e1
 
     public function getDebugInfo()
     {
-        return array (  192 => 59,  184 => 57,  180 => 55,  173 => 51,  166 => 47,  162 => 46,  159 => 45,  156 => 44,  153 => 42,  144 => 39,  141 => 38,  137 => 37,  131 => 34,  126 => 33,  117 => 30,  113 => 29,  109 => 28,  106 => 27,  102 => 26,  98 => 25,  95 => 24,  92 => 23,  90 => 22,  88 => 21,  79 => 19,  74 => 18,  69 => 16,  64 => 14,  61 => 12,  56 => 11,  53 => 9,  47 => 8,  45 => 7,  42 => 5,  39 => 3,  29 => 1,);
+        return array (  200 => 61,  192 => 59,  188 => 57,  181 => 53,  174 => 49,  170 => 48,  166 => 47,  162 => 46,  159 => 45,  156 => 44,  153 => 42,  144 => 39,  141 => 38,  137 => 37,  131 => 34,  126 => 33,  117 => 30,  113 => 29,  109 => 28,  106 => 27,  102 => 26,  98 => 25,  95 => 24,  92 => 23,  90 => 22,  88 => 21,  79 => 19,  74 => 18,  69 => 16,  64 => 14,  61 => 12,  56 => 11,  53 => 9,  47 => 8,  45 => 7,  42 => 5,  39 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -270,6 +278,8 @@ class __TwigTemplate_9de1010f2d790d8318db6231ea774d674d03bfa4fa56e4b0976dd16d3e1
             <ul class=\"content-list\">
               <li><h1>{{pitem.movies|first.title}}</h1></li>
               <li><span>{{pitem.movies|first.author}}</span></li>
+              <li>{{pitem.desription|markdown}}</li>
+              <li>{{pitem.credits|markdown}}</li>
             </ul>
             <ul class=\"department-list\">
               <li>

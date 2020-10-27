@@ -25,10 +25,10 @@ body {
   padding: 10px;
   width: 100%;
   display: grid;
-  /* grid-template-columns: repeat(var(--columns), calc(100%/var(--columns)) ); */
-  grid-template-columns: calc(100% / var(--columns)) calc(200% / var(--columns)) auto calc(100% / var(--columns));
+  /* 1 column, 2 columns, auto, 1 column */
+  grid-template-columns: calc(100% / var(--columns)) calc(100% / var(--columns) * 2) auto calc(100% / var(--columns));
 }
-.program-item *{
+.program-item>*{
   margin: 0 10px;
   background: grey;
   max-width: calc(100% - 20px);
@@ -39,13 +39,9 @@ body {
   margin: 0;
 }
 .program-item .main-img{
-  /* grid-column-start: 2;
-  grid-column-end:4; */
   width: 100%;
 }
 .program-item .content-list{
-  /* grid-column-start: 4;
-  grid-column-end: 12; */
   width: 100%;
 }
 .program-item ul{
@@ -58,16 +54,10 @@ body {
 }
 .program-item .department-list{
   margin-top: 1.25em;
-  /* grid-column-start: 12;
-  grid-column-end: 13; */
   text-align: right;
 }
 .program-item .department-list li{
-  float: right;
-}
-.program-item .department-list li span{
-  padding: 0;
-  margin: 0;
+  max-width: 100%;
 }
 
 
@@ -75,7 +65,54 @@ body {
 
 /* grid/mobile */
 @media only screen and (max-width: 1920px) {
+  .program-item{
+    /* 1 column, 2 columns, auto, 2 columns */
+    grid-template-columns: calc(100% / var(--columns)) calc(100% / var(--columns) * 2) auto calc(100% / var(--columns) * 2);
+  }
+}
+@media only screen and (max-width: 1600px) {
+  .program-item{
+    /* 1 column, 3 columns, auto, 2 columns */
+    grid-template-columns: calc(100% / var(--columns)) calc(100% / var(--columns) * 3) auto calc(100% / var(--columns) * 2);
+  }
+}
+@media only screen and (max-width: 1280px) {
   body {
-    background-color: lightblue;
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  :root {
+    --columns: 3;
+  }
+  .program-item{
+    /* 1 column, 2 columns */
+    grid-template-columns: calc(100% / var(--columns)) calc(100% / var(--columns) * 2);
+  }
+  .program-item .starting-time{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .program-item .department-list{
+  display: none;
+  }
+}
+@media only screen and (max-width: 750px) {
+  :root {
+    --columns: 5;
+  }
+  .program-item{
+    /* 2 columns, 3 column */
+    grid-template-columns: calc(100% / var(--columns) * 2) calc(100% / var(--columns) * 3);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .program-item .starting-time{
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .program-item{
+    /* no more columns */
+    grid-template-columns: 100%;
   }
 }

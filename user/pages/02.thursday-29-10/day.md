@@ -29,7 +29,7 @@ programitems:
             -
                 title: 'Movie Title'
                 author: 'Author Name'
-                department: department
+                department: 'studio for immediate spaces'
                 length: '6'
         title: 'Short Films 1'
         start: '16:30'
