@@ -2,17 +2,17 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/lukasengelhardt/Dropbox/Current Work/Sandberg/yr 1/08 home cinema/1 code/home-cinema-1.6/user/config/system.yaml',
-    'modified' => 1603727874,
+    'modified' => 1603729971,
     'data' => [
         'absolute_urls' => false,
-        'timezone' => '',
+        'timezone' => NULL,
         'default_locale' => NULL,
         'param_sep' => ':',
         'wrapped_site' => false,
         'reverse_proxy_setup' => false,
         'force_ssl' => false,
         'force_lowercase_urls' => true,
-        'custom_base_url' => '',
+        'custom_base_url' => NULL,
         'username_regex' => '^[a-z0-9_-]{3,16}$',
         'pwd_regex' => '(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}',
         'intl_enabled' => true,
@@ -23,9 +23,7 @@ return [
             'ip' => true
         ],
         'languages' => [
-            'supported' => [
-                
-            ],
+            'supported' => NULL,
             'default_lang' => NULL,
             'include_default_lang' => true,
             'pages_fallback_only' => false,
@@ -40,7 +38,7 @@ return [
             'hide_in_urls' => false
         ],
         'pages' => [
-            'theme' => 'cinema-theme-2-0',
+            'theme' => 'cinema-theme',
             'order' => [
                 'by' => 'default',
                 'dir' => 'asc'
@@ -90,14 +88,14 @@ return [
                 5 => 'rss',
                 6 => 'atom'
             ],
-            'append_url_extension' => '',
+            'append_url_extension' => NULL,
             'expires' => 604800,
             'cache_control' => NULL,
             'last_modified' => false,
             'etag' => false,
             'vary_accept_encoding' => false,
             'redirect_default_route' => false,
-            'redirect_default_code' => 302,
+            'redirect_default_code' => '302',
             'redirect_trailing_slash' => true,
             'ignore_files' => [
                 0 => '.DS_Store'
@@ -133,7 +131,18 @@ return [
             'gzip' => false,
             'allow_webserver_gzip' => false,
             'redis' => [
-                'socket' => false
+                'socket' => NULL,
+                'server' => NULL,
+                'port' => NULL,
+                'password' => NULL
+            ],
+            'memcache' => [
+                'server' => NULL,
+                'port' => NULL
+            ],
+            'memcached' => [
+                'server' => NULL,
+                'port' => NULL
             ]
         ],
         'twig' => [
@@ -162,7 +171,7 @@ return [
             ]
         ],
         'errors' => [
-            'display' => true,
+            'display' => 1,
             'log' => true
         ],
         'log' => [
@@ -172,7 +181,7 @@ return [
             ]
         ],
         'debugger' => [
-            'enabled' => false,
+            'enabled' => true,
             'shutdown' => [
                 'close_connection' => true
             ],
@@ -188,12 +197,8 @@ return [
         ],
         'media' => [
             'enable_media_timestamp' => false,
-            'unsupported_inline_types' => [
-                
-            ],
-            'allowed_fallback_types' => [
-                
-            ],
+            'unsupported_inline_types' => NULL,
+            'allowed_fallback_types' => NULL,
             'auto_metadata_exif' => false,
             'upload_limit' => 8388608
         ],

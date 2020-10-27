@@ -2,9 +2,9 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/lukasengelhardt/Dropbox/Current Work/Sandberg/yr 1/08 home cinema/1 code/home-cinema-1.6/user/data/feed/53fd1660aadd9db416e6f53e7b5dc8e2.yaml',
-    'modified' => 1603727747,
+    'modified' => 1603802872,
     'data' => [
-        'last_checked' => 1603727747,
+        'last_checked' => 1603802872,
         'data' => [
             0 => [
                 'title' => 'Grav 1.7 RC.1 Released',

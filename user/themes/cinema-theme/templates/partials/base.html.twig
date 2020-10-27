@@ -18,10 +18,14 @@
     {% do assets.addCss('https://unpkg.com/purecss@1.0.0/build/pure-min.css', 100) %}
     {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 99) %}
     {% do assets.addCss('theme://css/custom.css', 98) %}
+    {% do assets.addCss('https://unpkg.com/swiper/swiper-bundle.min.css', 97) %}
 {% endblock %}
 
 {% block javascripts %}
     {% do assets.addJs('jquery', 100) %}
+    {% do assets.addJs('https://unpkg.com/swiper/swiper-bundle.min.js', {group:'bottom'}) %}
+    {% do assets.addJs('https://player.vimeo.com/api/player.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/index.js', {group:'bottom'}) %}
 {% endblock %}
 
 {% block assets deferred %}
@@ -35,14 +39,15 @@
     <div class="header">
         <div class="wrapper padding">
             <a class="logo left" href="{{ home_url }}">
-                {{ config.site.title }}
-                {{ page.title }}
+              <span class="logo-title bold big nowrap">{{ config.site.title }}</span>
+              <span class="logo-subtitle smalltimes nowrap">{{ page.title }}</span>
             </a>
             {% block header_navigation %}
             <nav class="main-nav">
                 {% include 'partials/navigation.html.twig' %}
             </nav>
             {% endblock %}
+            <button class="enter bold big nowrap blue" type="button" name="Enter Cinema"></button>
         </div>
     </div>
 {% endblock %}
@@ -52,6 +57,7 @@
         <div class="wrapper padding">
         {% block content %}{% endblock %}
         </div>
+      {% block cinema %}{% endblock %}
     </section>
 {% endblock %}
 

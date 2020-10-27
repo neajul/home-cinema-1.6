@@ -2,62 +2,84 @@
 
 {% block content %}
 {# first, about part #}
+<div class="about-section">
+<button class="about-button accordeon trigger closed white" type="button" name="about toggle"><span class="arrowbefore bold big">About</span></button>
+  <div class="about-text accordeon content closed">
+    {{content}}
+  </div>
+</div>
 
 {# then, program part #}
-  {# loop through days #}
-  {% for p in pages.children.visible if p.template == "day" %}
-    <div class="day-container">
-      {# loop through program items #}
-      {% for pitem in p.header.programitems %}
-        <div class="program-item">
-        {# start time #}
-          <span class="starting-time">{{pitem.start}}</span>
-        {# duration #}
-          <span class="duration">{{pitem.duration}} min</span>
-        {# main image #}
-          {% for image, notimportant in pitem.mainimage %}
-            <img class="main-img" src="{{image}}" alt="">
-          {% endfor %}
-        {# content #}
-          {# multiple movies #}
-          {% if pitem.movies|length > 1 %}
-            <ul class="content-list">
-              <li><h1>{{pitem.title}}</h1></li>
-              {% for movie in pitem.movies %}
-                <li>
-                  <span>{{movie.title}}</span>
-                  <span>{{movie.author}}</span>
-                  <span>{{movie.length}} min</span>
-                </li>
+  <!-- Slider main container -->
+  <div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      {# loop through days #}
+      {% for p in pages.children.visible if p.template == "day" %}
+        <div class="day-container swiper-slide" data-title="{{p.menu}}">
+          {# loop through program items #}
+          {% for pitem in p.header.programitems %}
+            <div class="program-item">
+            {# start time #}
+              <span class="starting-time bold">{{pitem.start}}</span>
+            {# duration #}
+              <span class="duration bold">{{pitem.duration}} min</span>
+            {# main image #}
+              {% for image, notimportant in pitem.mainimage %}
+                <img class="main-img" src="{{image}}" alt="">
               {% endfor %}
-              <li>{{pitem.desription|markdown}}</li>
-              <li>{{pitem.credits|markdown}}</li>
-            </ul>
-            <ul class="department-list">
-            {% for movie in pitem.movies %}
-              <li>
-                <span>{{movie.department}}</span>
-              </li>
-            {% endfor %}
-            </ul>
-        {# just one movie #}
-          {% else %}
-            <ul class="content-list">
-              <li><h1>{{pitem.movies|first.title}}</h1></li>
-              <li><span>{{pitem.movies|first.author}}</span></li>
-              <li>{{pitem.desription|markdown}}</li>
-              <li>{{pitem.credits|markdown}}</li>
-            </ul>
-            <ul class="department-list">
-              <li>
-                <span>{{pitem.movies|first.department}}</span>
-              </li>
-            </ul>
-          {% endif %}
-        </div>
+            {# content #}
+              {# multiple movies #}
+              {% if pitem.movies|length > 1 %}
+                <ul class="content-list">
+                  <li class="content-title accordeon trigger closed"><h1 class="arrowbefore">{{pitem.title}}</h1></li>
+                  {% for movie in pitem.movies %}
+                    <li class="content-subtitle">
+                      <span>{{movie.title}}</span>
+                      <span class="smalltimes">{{movie.author}},</span>
+                      <span class="smalltimes">{{movie.length}} min</span>
+                    </li>
+                  {% endfor %}
+                  <li class="content-description accordeon content closed">{{pitem.desription|markdown}}</li>
+                  <li class="content-credits accordeon content closed smalltimes">{{pitem.credits|markdown}}</li>
+                </ul>
+                <ul class="department-list">
+                {% for movie in pitem.movies %}
+                  <li>
+                    <span class="smalltimes">{{movie.department}}</span>
+                  </li>
+                {% endfor %}
+                </ul>
+            {# just one movie #}
+              {% else %}
+                <ul class="content-list">
+                  <li class="content-title accordeon trigger closed">
+                    <h1 class="arrowbefore">{{pitem.movies|first.title}}</h1>
+                    <span class="smalltimes">{{pitem.movies|first.author}}</span>
+                  </li>
+                  <li class="content-description accordeon content closed">{{pitem.desription|markdown}}</li>
+                  <li class="content-credits accordeon content closed smalltimes">{{pitem.credits|markdown}}</li>
+                </ul>
+                <ul class="department-list">
+                  <li>
+                    <span class="smalltimes">{{pitem.movies|first.department}}</span>
+                  </li>
+                </ul>
+              {% endif %}
+            </div>
 
-        {{dump(pitem)}}
+            {{dump(pitem)}}
+          {% endfor %}
+        </div>
       {% endfor %}
     </div>
-  {% endfor %}
+  </div>
+{% endblock %}
+
+{% block cinema %}
+<div class="cinema-wrapper">
+  <div style="width: 100%;height: 100%;">
+    <iframe src="https://player.vimeo.com/video/472761182" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+  </div>
+</div>
 {% endblock %}

@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1603729971,
-    'checksum' => '96e0941319c20d5a1e6e6fbc24e4750c',
+    'timestamp' => 1603829371,
+    'checksum' => '160c5e2b335fef063aec88a1ba27dc43',
     'files' => [
         'user/config' => [
             'backups' => [
@@ -72,6 +72,10 @@ return [
             'plugins/admin' => [
                 'file' => 'user/plugins/admin/admin.yaml',
                 'modified' => 1602113430
+            ],
+            'plugins/admin-addon-user-manager' => [
+                'file' => 'user/plugins/admin-addon-user-manager/admin-addon-user-manager.yaml',
+                'modified' => 1603829370
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/problems.yaml',
@@ -196,6 +200,13 @@ return [
                         'monthly' => 12,
                         'visitors' => 20
                     ]
+                ]
+            ],
+            'admin-addon-user-manager' => [
+                'enabled' => true,
+                'default_list_style' => 'list',
+                'pagination' => [
+                    'per_page' => 20
                 ]
             ],
             'problems' => [
