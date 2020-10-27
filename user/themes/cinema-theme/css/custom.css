@@ -25,7 +25,8 @@ body {
   padding: 10px;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(var(--columns), calc(100%/var(--columns)) );
+  /* grid-template-columns: repeat(var(--columns), calc(100%/var(--columns)) ); */
+  grid-template-columns: calc(100% / var(--columns)) calc(200% / var(--columns)) auto calc(100% / var(--columns));
 }
 .program-item *{
   margin: 0 10px;
@@ -35,19 +36,21 @@ body {
 .program-item .duration{
   position: absolute;
   right: 20px;
+  margin: 0;
 }
 .program-item .main-img{
-  grid-column-start: 2;
-  grid-column-end:4;
+  /* grid-column-start: 2;
+  grid-column-end:4; */
   width: 100%;
 }
 .program-item .content-list{
-  grid-column-start: 4;
-  grid-column-end: 12;
+  /* grid-column-start: 4;
+  grid-column-end: 12; */
   width: 100%;
 }
 .program-item ul{
   padding: 0;
+  list-style: none;
 }
 .program-item li{
   padding: 0;
@@ -55,7 +58,24 @@ body {
 }
 .program-item .department-list{
   margin-top: 1.25em;
-  grid-column-start: 12;
-  grid-column-end: 13;
+  /* grid-column-start: 12;
+  grid-column-end: 13; */
   text-align: right;
+}
+.program-item .department-list li{
+  float: right;
+}
+.program-item .department-list li span{
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+/* grid/mobile */
+@media only screen and (max-width: 1920px) {
+  body {
+    background-color: lightblue;
+  }
 }
