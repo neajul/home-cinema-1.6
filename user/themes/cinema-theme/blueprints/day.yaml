@@ -24,6 +24,8 @@ form:
             header.media_order:
               label: upload all images here
               unset@: true
+            header.credits:
+              unset@: true
 
             header.programitems:
               type: list

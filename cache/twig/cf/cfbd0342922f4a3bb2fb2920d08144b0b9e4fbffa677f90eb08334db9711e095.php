@@ -58,32 +58,32 @@ class __TwigTemplate_978bff4aee8f04d70d98739b9bd84401f1945cb2ab4a18ed0e9e1668aec
 ";
         // line 24
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 30
+        // line 33
         echo "
 ";
-        // line 31
+        // line 34
         $this->displayBlock('assets', $context, $blocks);
-        // line 35
+        // line 38
         echo "</head>
 <body id=\"top\" class=\"";
-        // line 36
+        // line 39
         echo $this->getAttribute($this->getAttribute(($context["page"] ?? null), "header", []), "body_classes", []);
         echo "\">
 
 ";
-        // line 38
+        // line 41
         $this->displayBlock('header', $context, $blocks);
-        // line 54
+        // line 57
         echo "
 ";
-        // line 55
+        // line 58
         $this->displayBlock('body', $context, $blocks);
-        // line 63
+        // line 66
         echo "
 ";
-        // line 64
-        $this->displayBlock('bottom', $context, $blocks);
         // line 67
+        $this->displayBlock('bottom', $context, $blocks);
+        // line 70
         echo "
 </body>
 </html>
@@ -154,6 +154,15 @@ class __TwigTemplate_978bff4aee8f04d70d98739b9bd84401f1945cb2ab4a18ed0e9e1668aec
         $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "https://player.vimeo.com/api/player.js", 1 => ["group" => "bottom"]], "method");
         // line 28
         echo "    ";
+        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/moment.js", 1 => ["group" => "bottom"]], "method");
+        // line 29
+        echo "    ";
+        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/moment-timezone-with-data-10-year-range.min.js", 1 => ["group" => "bottom"]], "method");
+        // line 30
+        echo "    ";
+        $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/jquery.transit.min.js", 1 => ["group" => "bottom"]], "method");
+        // line 31
+        echo "    ";
         $this->getAttribute(($context["assets"] ?? null), "addJs", [0 => "theme://js/index.js", 1 => ["group" => "bottom"]], "method");
     }
 
@@ -162,96 +171,96 @@ class __TwigTemplate_978bff4aee8f04d70d98739b9bd84401f1945cb2ab4a18ed0e9e1668aec
         $this->env->getExtension('Phive\Twig\Extensions\Deferred\DeferredExtension')->defer($this, 'assets');
     }
 
-    // line 31
+    // line 34
     public function block_assets_deferred($context, array $blocks = array())
     {
-        // line 32
+        // line 35
         echo "    ";
         echo $this->getAttribute(($context["assets"] ?? null), "css", [], "method");
         echo "
     ";
-        // line 33
+        // line 36
         echo $this->getAttribute(($context["assets"] ?? null), "js", [], "method");
         echo "
 ";
         $this->env->getExtension('Phive\Twig\Extensions\Deferred\DeferredExtension')->resolve($this, $context, $blocks);
     }
 
-    // line 38
+    // line 41
     public function block_header($context, array $blocks = [])
     {
-        // line 39
+        // line 42
         echo "    <div class=\"header\">
         <div class=\"wrapper padding\">
             <a class=\"logo left\" href=\"";
-        // line 41
+        // line 44
         echo ($context["home_url"] ?? null);
         echo "\">
               <span class=\"logo-title bold big nowrap\">";
-        // line 42
+        // line 45
         echo $this->getAttribute($this->getAttribute(($context["config"] ?? null), "site", []), "title", []);
         echo "</span>
               <span class=\"logo-subtitle smalltimes nowrap\">";
-        // line 43
+        // line 46
         echo $this->getAttribute(($context["page"] ?? null), "title", []);
         echo "</span>
             </a>
             ";
-        // line 45
+        // line 48
         $this->displayBlock('header_navigation', $context, $blocks);
-        // line 50
+        // line 53
         echo "            <button class=\"enter bold big nowrap blue\" type=\"button\" name=\"Enter Cinema\"></button>
         </div>
     </div>
 ";
     }
 
-    // line 45
+    // line 48
     public function block_header_navigation($context, array $blocks = [])
     {
-        // line 46
+        // line 49
         echo "            <nav class=\"main-nav\">
                 ";
-        // line 47
-        $this->loadTemplate("partials/navigation.html.twig", "partials/base.html.twig", 47)->display($context);
-        // line 48
+        // line 50
+        $this->loadTemplate("partials/navigation.html.twig", "partials/base.html.twig", 50)->display($context);
+        // line 51
         echo "            </nav>
             ";
     }
 
-    // line 55
+    // line 58
     public function block_body($context, array $blocks = [])
     {
-        // line 56
+        // line 59
         echo "    <section id=\"body\">
         <div class=\"wrapper padding\">
         ";
-        // line 58
+        // line 61
         $this->displayBlock('content', $context, $blocks);
-        // line 59
+        // line 62
         echo "        </div>
       ";
-        // line 60
+        // line 63
         $this->displayBlock('cinema', $context, $blocks);
-        // line 61
+        // line 64
         echo "    </section>
 ";
     }
 
-    // line 58
+    // line 61
     public function block_content($context, array $blocks = [])
     {
     }
 
-    // line 60
+    // line 63
     public function block_cinema($context, array $blocks = [])
     {
     }
 
-    // line 64
+    // line 67
     public function block_bottom($context, array $blocks = [])
     {
-        // line 65
+        // line 68
         echo "    ";
         echo $this->getAttribute(($context["assets"] ?? null), "js", [0 => "bottom"], "method");
         echo "
@@ -270,7 +279,7 @@ class __TwigTemplate_978bff4aee8f04d70d98739b9bd84401f1945cb2ab4a18ed0e9e1668aec
 
     public function getDebugInfo()
     {
-        return array (  255 => 65,  252 => 64,  247 => 60,  242 => 58,  237 => 61,  235 => 60,  232 => 59,  230 => 58,  226 => 56,  223 => 55,  218 => 48,  216 => 47,  213 => 46,  210 => 45,  203 => 50,  201 => 45,  196 => 43,  192 => 42,  188 => 41,  184 => 39,  181 => 38,  174 => 33,  169 => 32,  166 => 31,  156 => 28,  153 => 27,  150 => 26,  147 => 25,  144 => 24,  139 => 21,  136 => 20,  133 => 19,  130 => 18,  127 => 17,  121 => 14,  117 => 13,  114 => 12,  112 => 11,  101 => 7,  98 => 6,  95 => 5,  87 => 67,  85 => 64,  82 => 63,  80 => 55,  77 => 54,  75 => 38,  70 => 36,  67 => 35,  65 => 31,  62 => 30,  60 => 24,  57 => 23,  55 => 17,  52 => 16,  50 => 5,  45 => 3,  42 => 2,  40 => 1,);
+        return array (  264 => 68,  261 => 67,  256 => 63,  251 => 61,  246 => 64,  244 => 63,  241 => 62,  239 => 61,  235 => 59,  232 => 58,  227 => 51,  225 => 50,  222 => 49,  219 => 48,  212 => 53,  210 => 48,  205 => 46,  201 => 45,  197 => 44,  193 => 42,  190 => 41,  183 => 36,  178 => 35,  175 => 34,  165 => 31,  162 => 30,  159 => 29,  156 => 28,  153 => 27,  150 => 26,  147 => 25,  144 => 24,  139 => 21,  136 => 20,  133 => 19,  130 => 18,  127 => 17,  121 => 14,  117 => 13,  114 => 12,  112 => 11,  101 => 7,  98 => 6,  95 => 5,  87 => 70,  85 => 67,  82 => 66,  80 => 58,  77 => 57,  75 => 41,  70 => 39,  67 => 38,  65 => 34,  62 => 33,  60 => 24,  57 => 23,  55 => 17,  52 => 16,  50 => 5,  45 => 3,  42 => 2,  40 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -310,6 +319,9 @@ class __TwigTemplate_978bff4aee8f04d70d98739b9bd84401f1945cb2ab4a18ed0e9e1668aec
     {% do assets.addJs('jquery', 100) %}
     {% do assets.addJs('https://unpkg.com/swiper/swiper-bundle.min.js', {group:'bottom'}) %}
     {% do assets.addJs('https://player.vimeo.com/api/player.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/moment.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/moment-timezone-with-data-10-year-range.min.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/jquery.transit.min.js', {group:'bottom'}) %}
     {% do assets.addJs('theme://js/index.js', {group:'bottom'}) %}
 {% endblock %}
 

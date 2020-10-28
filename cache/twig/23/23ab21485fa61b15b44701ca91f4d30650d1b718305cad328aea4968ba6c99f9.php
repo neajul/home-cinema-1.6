@@ -43,55 +43,65 @@ class __TwigTemplate_9de1010f2d790d8318db6231ea774d674d03bfa4fa56e4b0976dd16d3e1
         echo "<div class=\"about-section\">
 <button class=\"about-button accordeon trigger closed white\" type=\"button\" name=\"about toggle\"><span class=\"arrowbefore bold big\">About</span></button>
   <div class=\"about-text accordeon content closed\">
-    ";
-        // line 8
+  ";
+        // line 9
+        echo "    <div class=\"column left\">
+      ";
+        // line 10
         echo ($context["content"] ?? null);
         echo "
+    </div>
+    <div class=\"column right\">
+      ";
+        // line 13
+        echo $this->env->getExtension('Grav\Common\Twig\TwigExtension')->markdownFunction($context, $this->getAttribute(($context["header"] ?? null), "credits", []));
+        echo "
+    </div>
   </div>
 </div>
 
 ";
-        // line 13
+        // line 19
         echo "  <!-- Slider main container -->
   <div class=\"swiper-container\">
     <!-- Additional required wrapper -->
     <div class=\"swiper-wrapper\">
       ";
-        // line 18
+        // line 24
         echo "      ";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute(($context["pages"] ?? null), "children", []), "visible", []));
         foreach ($context['_seq'] as $context["_key"] => $context["p"]) {
             if (($this->getAttribute($context["p"], "template", []) == "day")) {
-                // line 19
+                // line 25
                 echo "        <div class=\"day-container swiper-slide\" data-title=\"";
                 echo $this->getAttribute($context["p"], "menu", []);
                 echo "\">
           ";
-                // line 21
+                // line 27
                 echo "          ";
                 $context['_parent'] = $context;
                 $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($context["p"], "header", []), "programitems", []));
                 foreach ($context['_seq'] as $context["_key"] => $context["pitem"]) {
-                    // line 22
+                    // line 28
                     echo "            <div class=\"program-item\">
             ";
-                    // line 24
+                    // line 30
                     echo "              <span class=\"starting-time bold\">";
                     echo $this->getAttribute($context["pitem"], "start", []);
                     echo "</span>
             ";
-                    // line 26
+                    // line 32
                     echo "              <span class=\"duration bold\">";
                     echo $this->getAttribute($context["pitem"], "duration", []);
                     echo " min</span>
             ";
-                    // line 28
+                    // line 34
                     echo "              ";
                     $context['_parent'] = $context;
                     $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["pitem"], "mainimage", []));
                     foreach ($context['_seq'] as $context["image"] => $context["notimportant"]) {
-                        // line 29
+                        // line 35
                         echo "                <img class=\"main-img\" src=\"";
                         echo $context["image"];
                         echo "\" alt=\"\">
@@ -100,36 +110,36 @@ class __TwigTemplate_9de1010f2d790d8318db6231ea774d674d03bfa4fa56e4b0976dd16d3e1
                     $_parent = $context['_parent'];
                     unset($context['_seq'], $context['_iterated'], $context['image'], $context['notimportant'], $context['_parent'], $context['loop']);
                     $context = array_intersect_key($context, $_parent) + $_parent;
-                    // line 31
+                    // line 37
                     echo "            ";
-                    // line 32
+                    // line 38
                     echo "              ";
-                    // line 33
+                    // line 39
                     echo "              ";
                     if ((twig_length_filter($this->env, $this->getAttribute($context["pitem"], "movies", [])) > 1)) {
-                        // line 34
+                        // line 40
                         echo "                <ul class=\"content-list\">
                   <li class=\"content-title accordeon trigger closed\"><h1 class=\"arrowbefore\">";
-                        // line 35
+                        // line 41
                         echo $this->getAttribute($context["pitem"], "title", []);
                         echo "</h1></li>
                   ";
-                        // line 36
+                        // line 42
                         $context['_parent'] = $context;
                         $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["pitem"], "movies", []));
                         foreach ($context['_seq'] as $context["_key"] => $context["movie"]) {
-                            // line 37
+                            // line 43
                             echo "                    <li class=\"content-subtitle\">
                       <span>";
-                            // line 38
+                            // line 44
                             echo $this->getAttribute($context["movie"], "title", []);
                             echo "</span>
                       <span class=\"smalltimes\">";
-                            // line 39
+                            // line 45
                             echo $this->getAttribute($context["movie"], "author", []);
                             echo ",</span>
                       <span class=\"smalltimes\">";
-                            // line 40
+                            // line 46
                             echo $this->getAttribute($context["movie"], "length", []);
                             echo " min</span>
                     </li>
@@ -138,25 +148,25 @@ class __TwigTemplate_9de1010f2d790d8318db6231ea774d674d03bfa4fa56e4b0976dd16d3e1
                         $_parent = $context['_parent'];
                         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['movie'], $context['_parent'], $context['loop']);
                         $context = array_intersect_key($context, $_parent) + $_parent;
-                        // line 43
+                        // line 49
                         echo "                  <li class=\"content-description accordeon content closed\">";
                         echo $this->env->getExtension('Grav\Common\Twig\TwigExtension')->markdownFunction($context, $this->getAttribute($context["pitem"], "desription", []));
                         echo "</li>
                   <li class=\"content-credits accordeon content closed smalltimes\">";
-                        // line 44
+                        // line 50
                         echo $this->env->getExtension('Grav\Common\Twig\TwigExtension')->markdownFunction($context, $this->getAttribute($context["pitem"], "credits", []));
                         echo "</li>
                 </ul>
                 <ul class=\"department-list\">
                 ";
-                        // line 47
+                        // line 53
                         $context['_parent'] = $context;
                         $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["pitem"], "movies", []));
                         foreach ($context['_seq'] as $context["_key"] => $context["movie"]) {
-                            // line 48
+                            // line 54
                             echo "                  <li>
                     <span class=\"smalltimes\">";
-                            // line 49
+                            // line 55
                             echo $this->getAttribute($context["movie"], "department", []);
                             echo "</span>
                   </li>
@@ -165,48 +175,48 @@ class __TwigTemplate_9de1010f2d790d8318db6231ea774d674d03bfa4fa56e4b0976dd16d3e1
                         $_parent = $context['_parent'];
                         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['movie'], $context['_parent'], $context['loop']);
                         $context = array_intersect_key($context, $_parent) + $_parent;
-                        // line 52
+                        // line 58
                         echo "                </ul>
             ";
-                        // line 54
+                        // line 60
                         echo "              ";
                     } else {
-                        // line 55
+                        // line 61
                         echo "                <ul class=\"content-list\">
                   <li class=\"content-title accordeon trigger closed\">
                     <h1 class=\"arrowbefore\">";
-                        // line 57
+                        // line 63
                         echo $this->getAttribute(twig_first($this->env, $this->getAttribute($context["pitem"], "movies", [])), "title", []);
                         echo "</h1>
                     <span class=\"smalltimes\">";
-                        // line 58
+                        // line 64
                         echo $this->getAttribute(twig_first($this->env, $this->getAttribute($context["pitem"], "movies", [])), "author", []);
                         echo "</span>
                   </li>
                   <li class=\"content-description accordeon content closed\">";
-                        // line 60
+                        // line 66
                         echo $this->env->getExtension('Grav\Common\Twig\TwigExtension')->markdownFunction($context, $this->getAttribute($context["pitem"], "desription", []));
                         echo "</li>
                   <li class=\"content-credits accordeon content closed smalltimes\">";
-                        // line 61
+                        // line 67
                         echo $this->env->getExtension('Grav\Common\Twig\TwigExtension')->markdownFunction($context, $this->getAttribute($context["pitem"], "credits", []));
                         echo "</li>
                 </ul>
                 <ul class=\"department-list\">
                   <li>
                     <span class=\"smalltimes\">";
-                        // line 65
+                        // line 71
                         echo $this->getAttribute(twig_first($this->env, $this->getAttribute($context["pitem"], "movies", [])), "department", []);
                         echo "</span>
                   </li>
                 </ul>
               ";
                     }
-                    // line 69
+                    // line 75
                     echo "            </div>
 
             ";
-                    // line 71
+                    // line 77
                     echo $this->env->getExtension('Grav\Common\Twig\TwigExtension')->dump($this->env, $context, $context["pitem"]);
                     echo "
           ";
@@ -214,7 +224,7 @@ class __TwigTemplate_9de1010f2d790d8318db6231ea774d674d03bfa4fa56e4b0976dd16d3e1
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pitem'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 73
+                // line 79
                 echo "        </div>
       ";
             }
@@ -222,19 +232,22 @@ class __TwigTemplate_9de1010f2d790d8318db6231ea774d674d03bfa4fa56e4b0976dd16d3e1
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['p'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 75
+        // line 81
         echo "    </div>
   </div>
 ";
     }
 
-    // line 79
+    // line 85
     public function block_cinema($context, array $blocks = [])
     {
-        // line 80
+        // line 86
         echo "<div class=\"cinema-wrapper\">
   <div style=\"width: 100%;height: 100%;\">
-    <iframe src=\"https://player.vimeo.com/video/472761182\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\"></iframe>
+    <iframe src=\"https://player.vimeo.com/video/";
+        // line 88
+        echo $this->getAttribute(($context["header"] ?? null), "vimeo", []);
+        echo "\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\"></iframe>
   </div>
 </div>
 ";
@@ -252,7 +265,7 @@ class __TwigTemplate_9de1010f2d790d8318db6231ea774d674d03bfa4fa56e4b0976dd16d3e1
 
     public function getDebugInfo()
     {
-        return array (  235 => 80,  232 => 79,  226 => 75,  218 => 73,  210 => 71,  206 => 69,  199 => 65,  192 => 61,  188 => 60,  183 => 58,  179 => 57,  175 => 55,  172 => 54,  169 => 52,  160 => 49,  157 => 48,  153 => 47,  147 => 44,  142 => 43,  133 => 40,  129 => 39,  125 => 38,  122 => 37,  118 => 36,  114 => 35,  111 => 34,  108 => 33,  106 => 32,  104 => 31,  95 => 29,  90 => 28,  85 => 26,  80 => 24,  77 => 22,  72 => 21,  67 => 19,  61 => 18,  55 => 13,  48 => 8,  43 => 5,  40 => 3,  30 => 1,);
+        return array (  249 => 88,  245 => 86,  242 => 85,  236 => 81,  228 => 79,  220 => 77,  216 => 75,  209 => 71,  202 => 67,  198 => 66,  193 => 64,  189 => 63,  185 => 61,  182 => 60,  179 => 58,  170 => 55,  167 => 54,  163 => 53,  157 => 50,  152 => 49,  143 => 46,  139 => 45,  135 => 44,  132 => 43,  128 => 42,  124 => 41,  121 => 40,  118 => 39,  116 => 38,  114 => 37,  105 => 35,  100 => 34,  95 => 32,  90 => 30,  87 => 28,  82 => 27,  77 => 25,  71 => 24,  65 => 19,  57 => 13,  51 => 10,  48 => 9,  43 => 5,  40 => 3,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -272,7 +285,13 @@ class __TwigTemplate_9de1010f2d790d8318db6231ea774d674d03bfa4fa56e4b0976dd16d3e1
 <div class=\"about-section\">
 <button class=\"about-button accordeon trigger closed white\" type=\"button\" name=\"about toggle\"><span class=\"arrowbefore bold big\">About</span></button>
   <div class=\"about-text accordeon content closed\">
-    {{content}}
+  {# <div class=\"about-text accordeon content\"> #}
+    <div class=\"column left\">
+      {{content}}
+    </div>
+    <div class=\"column right\">
+      {{header.credits|markdown}}
+    </div>
   </div>
 </div>
 
@@ -346,7 +365,7 @@ class __TwigTemplate_9de1010f2d790d8318db6231ea774d674d03bfa4fa56e4b0976dd16d3e1
 {% block cinema %}
 <div class=\"cinema-wrapper\">
   <div style=\"width: 100%;height: 100%;\">
-    <iframe src=\"https://player.vimeo.com/video/472761182\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\"></iframe>
+    <iframe src=\"https://player.vimeo.com/video/{{header.vimeo}}\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\"></iframe>
   </div>
 </div>
 {% endblock %}

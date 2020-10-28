@@ -25,6 +25,9 @@
     {% do assets.addJs('jquery', 100) %}
     {% do assets.addJs('https://unpkg.com/swiper/swiper-bundle.min.js', {group:'bottom'}) %}
     {% do assets.addJs('https://player.vimeo.com/api/player.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/moment.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/moment-timezone-with-data-10-year-range.min.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/jquery.transit.min.js', {group:'bottom'}) %}
     {% do assets.addJs('theme://js/index.js', {group:'bottom'}) %}
 {% endblock %}
 

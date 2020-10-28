@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/Users/lukasengelhardt/Dropbox/Current Work/Sandberg/yr 1/08 home cinema/1 code/home-cinema-1.6/user/themes/cinema-theme/blueprints/day.yaml',
-    'modified' => 1603729759,
+    'modified' => 1603906449,
     'data' => [
         'title' => 'Page Content',
         '@extends' => 'default',
@@ -24,6 +24,9 @@ return [
                                 ],
                                 'header.media_order' => [
                                     'label' => 'upload all images here',
+                                    'unset@' => true
+                                ],
+                                'header.credits' => [
                                     'unset@' => true
                                 ],
                                 'header.programitems' => [
