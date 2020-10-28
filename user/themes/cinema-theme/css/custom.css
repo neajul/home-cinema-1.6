@@ -40,6 +40,9 @@ h1{
   margin: 0;
   display: inline-block;
 }
+h3{
+  font-size: 1em;
+}
 a{
   color: black;
 }
@@ -170,6 +173,7 @@ a{
 /* program */
 .program-item{
   padding: 10px;
+  padding-bottom: 0;
   width: 100%;
   display: grid;
   /* 1 column, 2 columns, auto, 1 column */
@@ -211,6 +215,7 @@ a{
 /* cinema */
 #body .wrapper{
   position: relative;
+  min-height: 100vh;
   z-index: 1;
 }
 #body .wrapper, .header{
@@ -364,6 +369,9 @@ a{
   .program-item{
     /* no more columns */
     grid-template-columns: 100%;
+  }
+  .content-list{
+    margin-top: 6px;
   }
   .header.cinema-open.fade-out{
     opacity: 1;

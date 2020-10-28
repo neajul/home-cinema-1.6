@@ -45,6 +45,7 @@ $(function() {
       // we are opening the cinema
       // play vimeo video
       player.play();
+      player.setMuted(false);
       $({someValue: 0}).animate({someValue: 100}, {
           duration: 800,
           step: function() {
@@ -57,9 +58,10 @@ $(function() {
           duration: 800,
           step: function() {
             player.setVolume(Math.ceil(this.someValue)/100);
-          }
+          }, complete: function(){
+            player.setMuted(true);
+          },
       });
-      player.play();
     }
   });
 
